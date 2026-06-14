@@ -44,7 +44,7 @@ exports.login = async (req, res) => {
     const optionsForCookie = {
       expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
       httpOnly: true,
-      secure: false,
+      secure: true,
       sameSite: "none"
     };
     res.header("Authorization" , `Bearer ${token}`).cookie("token", token, optionsForCookie).status(200).json({
