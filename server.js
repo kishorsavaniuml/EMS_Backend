@@ -17,10 +17,10 @@ app.use(express.json());
 //app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(cors({
-    origin:"http://localhost:5173",
+    origin:"https://ems-frontend-40r4hlxsq-kishorsavaniuml-6951s-projects.vercel.app",
     credentials:true
 }))
-
+""
 app.use("/api/users" , userRoutes);
 app.use("/api/auth" , authRoutes);
 app.use("/api/leaves" , leaveRoutes);
