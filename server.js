@@ -17,7 +17,7 @@ app.use(express.json());
 //app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(cors({
-    origin:"https://ems-frontend-raecnr8xx-kishorsavaniuml-6951s-projects.vercel.app",
+    origin:"https://ems-frontend-eae2mye3p-kishorsavaniuml-6951s-projects.vercel.app",
     credentials:true
 }))
 ""
