@@ -15,16 +15,20 @@ const adminDashboardRoutes =require("./routes/adminDashboardRoutes");
 
 app.use(express.json());
 //app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser());
 
-const corsOptions = {
-    origin:process.env.NODE_ENV === "production"? ["https://ems-frontend-nu1qgq0gs-kishorsavaniuml-6951s-projects.vercel.app"] :  ['http://localhost:5173', 'http://localhost:3000', 'http://localhost:5174'],
 
+// const corsOptions = {
+//     origin:process.env.NODE_ENV === "production"? ["https://ems-frontend-nu1qgq0gs-kishorsavaniuml-6951s-projects.vercel.app"] :  ['http://localhost:5173', 'http://localhost:3000', 'http://localhost:5174'],
+
+//     credentials:true
+
+// }
+
+app.use(cors({
+    origin : "https://ems-frontend-nu1qgq0gs-kishorsavaniuml-6951s-projects.vercel.app",
     credentials:true
-
-}
-
-app.use(cors(corsOptions))
+}))
+app.use(cookieParser());
 
 
 app.use("/api/users" , userRoutes);
