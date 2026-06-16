@@ -26,8 +26,9 @@ exports.isLoggedIn = (req,res,next) =>{
             
 
         } catch(err){
-            console.error(err);
+            console.error(err.message);
             return res.status(400).json({
+
                 success:false,
                 message : "token is invalid , login again"
             })

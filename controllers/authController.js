@@ -30,10 +30,10 @@ exports.login = async (req, res) => {
       user.password = undefined;
 
       const payloadForJwtToken = {
-        user,
+        use
       };
       token = jwt.sign(payloadForJwtToken, process.env.JWT_SECRET, {
-        expiresIn: "2h",
+        expiresIn: "2h"
       });
     } else {
       return res.status(401).json({
@@ -46,7 +46,8 @@ exports.login = async (req, res) => {
       httpOnly: true,
       secure: true,
       partitioned: true,
-      sameSite: "none"
+      sameSite: "none",
+      path: "/"
     };
     res.header("Authorization" , `Bearer ${token}`).cookie("token", token, optionsForCookie).status(200).json({
       success: true,
