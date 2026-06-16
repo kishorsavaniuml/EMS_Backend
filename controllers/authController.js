@@ -30,7 +30,7 @@ exports.login = async (req, res) => {
       user.password = undefined;
 
       const payloadForJwtToken = {
-        use
+        user
       };
       token = jwt.sign(payloadForJwtToken, process.env.JWT_SECRET, {
         expiresIn: "2h"
