@@ -18,7 +18,7 @@ const corsOptions = {
   origin:
     process.env.NODE_ENV === "production"
       ? [
-          "https://ems-frontend-nu1qgq0gs-kishorsavaniuml-6951s-projects.vercel.app",
+          "https://ems-frontend-g3qvquaq0-kishorsavaniuml-6951s-projects.vercel.app",
         ]
       : [
           "http://localhost:5173",
